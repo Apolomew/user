@@ -1,0 +1,58 @@
+.sidebar {
+    width: var(--sidebar-width); /* Thay đổi min-width thành width */
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--main-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thay đổi box-shadow */
+    z-index: 100; /* Đảm bảo sidebar hiển thị trên các phần khác */
+}
+
+.sidebar__logo {
+    height: 100px; /* Giảm chiều cao của logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Thêm margin dưới để tách biệt logo và các mục */
+}
+
+.sidebar__logo > img {
+    max-height: 100%; /* Đảm bảo logo không vượt quá chiều cao của phần tử cha */
+}
+
+.sidebar__item {
+    padding: 10px 0; /* Thêm padding top và bottom cho mỗi mục */
+    transition: background-color 0.3s ease; /* Thêm transition cho hover effect */
+}
+
+.sidebar__item-inner {
+    padding: 10px 25px; /* Giảm padding top và bottom của inner item */
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer; /* Biến con trỏ thành pointer khi hover */
+}
+
+.sidebar__item-inner > i {
+    margin-right: 10px;
+    font-size: 1.2rem; /* Giảm kích thước icon */
+}
+
+.sidebar__item-inner > span {
+    text-transform: capitalize;
+}
+
+.sidebar__item-inner:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Thêm background-color khi hover */
+}
+
+.sidebar__item-inner.active {
+    border-radius: 0 10px 10px 0; /* Bo góc cho mục active */
+    background-image: linear-gradient(
+            to right,
+            var(--main-color),
+            var(--second-color)
+    );
+    color: var(--txt-white);
+}
